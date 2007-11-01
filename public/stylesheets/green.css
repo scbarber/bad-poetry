@@ -1,0 +1,140 @@
+body
+{
+    font-family: Helvetica, Verdana, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    background: #DCE6CF;
+    color: #708059;
+}
+
+a, a:link, a:visited
+{
+    text-decoration: none;
+    color: #67567A;
+}
+
+a:hover, a:active
+{
+    text-decoration: underline;
+    color: #8D60BF;
+}
+
+#header
+{
+    text-align: center;
+    background: #000;
+}
+
+#add_poem_link, #account_links
+{
+    padding: 0 1em;
+}
+
+#content { margin: 1em; }
+
+#workingheader
+{
+    margin: 1em;
+}
+
+#workingheader label
+{
+    font-family: Georgia, serif;
+    color: #E6D7CF;
+}
+
+#workingheader #order_selector
+{
+    padding: 0.4em 1em;
+    background: #99BF60;
+    border-bottom: 1px solid #805F59;
+}
+
+#workingheader #tag_selector
+{
+    padding: 0.4em 1em;
+    background: #99BF60;
+    border-bottom: 1px solid #805F59;
+}
+
+.highlight { color: #805F59; }
+
+#workingheader #theme_selector
+{
+    padding: 0.4em 1em;
+    background: #99BF60;
+}
+
+.poem
+{
+    border: 1px solid #6B5980;
+    margin: 1em 1em 2em 1em;
+    padding: 1em;
+}
+
+.poem h3
+{
+    font-family: Georgia, serif;
+    color: #8D60BF;
+    font-size: 0.8em;
+}
+
+.poem .content
+{
+    line-height: 1.4em;
+}
+
+.poem .endline
+{
+    font-family: Georgia, serif;
+    color: #999;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.poem .content, .poem h3, .poem .endline
+{
+    padding: 0 0 0 260px;
+}
+
+.meta
+{
+    color: #444;
+    float: left;
+    width: 250px;
+}
+
+.clearall { clear: both; }
+
+ .pagination {
+    font-family: Helvetica, Verdana, Sans-Serif;
+    font-size: 0.7em;
+    padding: 3px;
+    margin: 0.4em 1em;
+
+  }
+  .pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #BF6F60;
+    text-decoration: none;
+    color: #805F59;
+  }
+  .pagination a:hover, .pagination a:active {
+    border: 1px solid #805F59;
+    color: #805F59;
+  }
+  .pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #805F59;
+    font-weight: bold;
+    background-color: #805F59;
+    color: #BF6F60;
+  }
+  .pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #fff;
+    color: #BF6F60;
+  }

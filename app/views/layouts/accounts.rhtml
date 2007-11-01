@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Bad Poetry</title>
+  <%= auto_discovery_link_tag(:rss, :action => 'feed') %>
+  <%= stylesheet_link_tag(session[:theme] || 'grey') %>
+</head>
+<body>
+<div id="header"><img src="/images/header.gif"></div>
+<div id="workingheader">
+<p style="color: green"><%= flash[:notice] %></p>
+</div>
+<div id="content">
+<%= @content_for_layout %>
+</div>
+</body>
+</html>

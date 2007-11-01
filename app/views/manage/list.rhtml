@@ -1,0 +1,27 @@
+<h1>Listing poems</h1>
+
+<table>
+  <tr>
+  <% for column in Poem.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for poem in @poems %>
+  <tr>
+  <% for column in Poem.content_columns %>
+    <td><%=h poem.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => poem %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => poem %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => poem }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @poem_pages.current.previous } if @poem_pages.current.previous %>
+<%= link_to 'Next page', { :page => @poem_pages.current.next } if @poem_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New poem', :action => 'new' %>

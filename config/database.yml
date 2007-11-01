@@ -1,0 +1,13 @@
+development:
+  adapter: mysql
+  database: badpoetry_development
+  username: root
+  password:
+  host: localhost
+
+production:
+  adapter: mysql
+  database: badpoetry
+  username: badpoetry
+  password: bad000
+  host: mysql.fishbulb.info

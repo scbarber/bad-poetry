@@ -1,0 +1,9 @@
+<br />
+<div id="account_links">
+<% if session[:user] %>
+<%= link_to 'logout', { :controller => 'accounts', :action => 'logout' } %>
+<% else %>
+<%= link_to 'login', { :controller => 'accounts', :action => 'login' } %> or 
+<%= link_to 'signup', { :controller => 'accounts', :action => 'signup' } %>
+<% end %>
+</div>

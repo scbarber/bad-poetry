@@ -1,0 +1,37 @@
+
+<%= will_paginate(@poems) if @show_pagination %>
+<% @poems.each do |poem| %>
+<div class="poem">
+  <h3><%=poem.title%> (Rating: <%=poem.score%>)</h3>
+  <hr />
+  <div class="meta">
+    <% if poem.user %>By <%=poem.user.username%><br /><% end %>
+    on <%=poem.created_at.strftime("%Y.%m.%d %H:%M")%><br />
+    <% poem.tags.each do |tag| %>
+      <%= link_to tag.name, :controller => 'view', :action => 'bytag', :tag => tag.name %>
+    <% end %><br />
+    <%= link_to '(permalink)', :controller => 'view', :action => 'poem', :id => poem %>
+    <% if poem.user && (poem.user == session[:user]) %>
+        <br />
+        <%= link_to 'edit', :controller => 'view', :action => 'edit', :id => poem %>
+      <% else %>
+        <% if session[:user] && !session[:user].voted_on?(poem.id) %>
+        <br /><strong>Vote:
+        <%= link_to ' + ', :controller => 'view', :action => 'modup', :id => poem %> /
+        <%= link_to ' - ', :controller => 'view', :action => 'moddown', :id => poem %></strong>
+        <% else %>
+        <br />
+        <% if session[:user] %>
+        You have voted.
+        <% else %>
+        Please log in to vote.
+      <% end %>
+      <% end %>
+      <% end %>
+  </div>
+  <div class="content"><%=poem.content.gsub(/\n/, '<br />') if poem.content%></div>
+  <div class="clearall"></div>
+</div>
+<% end %>
+
+<%= will_paginate(@poems) if @show_pagination %>

@@ -1,0 +1,23 @@
+<br />
+<a href="#" id="add_poem_link">+ Add a poem</a>
+<div id="add_poem" class="poem">
+<% form_tag :controller => 'view', :action => 'create' do %>
+<%= error_messages_for 'poem' %>
+<h3>Title: <%= text_field 'poem', 'title'  %></h3>
+<hr />
+<div class="meta">
+Your name:<br />
+<%= session[:user].username %><br /><br />
+Tags <em>(space delimited)</em><br/>
+<%= text_field 'poem_tags', 'tag', { :value => @poem_tags }  %>
+</div>
+<div class="content">
+<%= text_area 'poem', 'content'  %><br /><br />
+  <%= submit_tag 'Add some bad poetry' %>
+</div>
+
+<div class="clearall"></div>
+<% end %>
+</div>
+
+

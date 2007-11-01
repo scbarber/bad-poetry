@@ -1,0 +1,19 @@
+<div class="poem">
+<% form_for :poem, :url => { :controller => 'view', :action => 'edit', :id => @poem.id } do |form| %>
+<%= error_messages_for 'poem' %>
+<h3>Title: <%= form.text_field :title  %></h3>
+<hr />
+<div class="meta">
+Your name:<br />
+<%= session[:user].username %><br /><br />
+Tags <em>(space delimited)</em><br/>
+<%= text_field 'poem_tags', 'tag', { :value => @poem.tags.join(' ') }  %>
+</div>
+<div class="content">
+<%= form.text_area :content  %><br /><br />
+<%= submit_tag 'Save' %>
+</div>
+
+<div class="clearall"></div>
+<% end %>
+</div>

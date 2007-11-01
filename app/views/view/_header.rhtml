@@ -1,0 +1,18 @@
+<div id="tag_selector">
+<label>Filter by tag:</label> <%= link_to '(All tags)', :controller => 'view', :action => 'index' %>&nbsp;&nbsp;&nbsp;
+<% @tags.each do |tag| %>
+<%= link_to "#{tag.name} <span class=\"highlight\">(#{tag.attributes['cnt']})</span>", :controller => 'view', :action => 'bytag', :tag => tag.name %>&nbsp;&nbsp;&nbsp;
+<% end %>
+</div>
+<div id="order_selector">
+<label>Filter by author:</label>
+<% @users.each do |user| %>
+<%= link_to user.username, :controller => 'view', :action => 'byauthor', :id => user.id %>
+<% end %>
+</div>
+<div id="theme_selector">
+<label>Theme:</label>
+<% @themes.each do |theme| %>
+<%= link_to theme.capitalize, :controller => 'view', :action => 'set_theme', :id => theme %>
+<% end %>
+</div>

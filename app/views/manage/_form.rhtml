@@ -1,0 +1,21 @@
+<%= error_messages_for 'poem' %>
+
+<!--[form:poem]-->
+<p><label for="poem_content">Content</label><br/>
+<%= text_area 'poem', 'content'  %></p>
+
+<p><label for="poem_title">Title</label><br/>
+<%= text_field 'poem', 'title'  %></p>
+
+<p><label for="poem_author">Author</label><br/>
+<%= text_field 'poem', 'author'  %></p>
+
+
+<p><label for="poem_created_at">Created at</label><br/>
+<%= datetime_select 'poem', 'created_at'  %></p>
+
+<p><label for="poem_tags">Tags (space delimited)</label><br/>
+<%= text_field 'poem_tags', 'tag', { :value => @poem_tags }  %></p>
+
+<!--[eoform:poem]-->
+

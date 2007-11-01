@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Bad Poetry</title>
+  <%= auto_discovery_link_tag(:rss, :action => 'feed') %>
+  <%= stylesheet_link_tag(session[:theme] || 'grey') %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'mainview' %>
+</head>
+<body>
+<div id="header"><img src="/images/header.gif"></div>
+<div id="workingheader">
+<p style="color: green"><%= flash[:notice] %></p>
+<%= render :partial => 'header' %>
+<%= render :partial => 'account' %>
+<% if session[:user] %><%= render :partial => 'create' %><% end %>
+</div>
+
+<%= @content_for_layout %>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+body
+{
+    font-family: Helvetica, Verdana, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    background: #eee;
+    color: #333;
+}
+
+a, a:link, a:visited
+{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover, a:active
+{
+    text-decoration: underline;
+    background: #fff;
+}
+
+#header
+{
+    text-align: center;
+    background: #000;
+}
+
+#add_poem_link, #account_links
+{
+    padding: 0 1em;
+}
+
+#content { margin: 1em; }
+
+#workingheader
+{
+    margin: 1em;
+}
+
+#workingheader label
+{
+    font-family: Georgia, serif;
+    color: #aaa;
+}
+
+#workingheader #order_selector
+{
+    padding: 0.4em 1em;
+    background: #ccc;
+}
+
+#workingheader #tag_selector
+{
+    padding: 0.4em 1em;
+    background: #ddd;
+}
+
+#workingheader #theme_selector
+{
+    padding: 0.4em 1em;
+    background: #bbb;
+}
+
+.poem
+{
+    border: 1px solid #ddd;
+    margin: 1em 1em 2em 1em;
+    padding: 1em;
+}
+
+.poem h3
+{
+    font-family: Georgia, serif;
+    color: #999;
+    font-size: 0.8em;
+}
+
+.poem .content
+{
+    line-height: 1.4em;
+}
+
+.poem .endline
+{
+    font-family: Georgia, serif;
+    color: #999;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.poem .content, .poem h3, .poem .endline
+{
+    padding: 0 0 0 260px;
+}
+
+.meta
+{
+    color: #444;
+    float: left;
+    width: 250px;
+}
+
+.clearall { clear: both; }
+
+ .pagination {
+    font-family: Helvetica, Verdana, Sans-Serif;
+    font-size: 0.7em;
+    padding: 3px;
+    margin: 0.4em 1em;
+
+  }
+  .pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #999;
+  }
+  .pagination a:hover, .pagination a:active {
+    border: 1px solid #999;
+    color: #000;
+  }
+  .pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #999;
+    font-weight: bold;
+    background-color: #999;
+    color: #FFF;
+  }
+  .pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #eee;
+    color: #ddd;
+  }
