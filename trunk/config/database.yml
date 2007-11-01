@@ -3,7 +3,7 @@ development:
   database: badpoetry_development
   username: root
   password:
-  host: localhost
+  host: 127.0.0.1
 
 production:
   adapter: mysql

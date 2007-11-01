@@ -49,6 +49,7 @@ class ViewController < ApplicationController
     thispoem = Poem.find(params[:id])
     @poems = Array.new
     @poems << thispoem
+    @show_pagination = false
     render :action => 'index'
   end
 
