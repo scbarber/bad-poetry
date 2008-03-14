@@ -33,7 +33,7 @@ class ManageController < ApplicationController
 
   def edit
     @poem = Poem.find(params[:id])
-    @poem_tags = @poem.tag_names.join ' '
+    # @poem_tags = @poem.tag_names.join ' '
   end
 
   def update

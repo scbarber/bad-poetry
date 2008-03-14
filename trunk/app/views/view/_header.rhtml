@@ -7,7 +7,7 @@
 <div id="order_selector">
 <label>Filter by author:</label>
 <% @users.each do |user| %>
-<%= link_to user.username, :controller => 'view', :action => 'byauthor', :id => user.id %>
+<%= link_to "#{user.username} <span class=\"highlight\">(#{user.post_count})</span>", :controller => 'view', :action => 'byauthor', :id => user.id %>
 <% end %>
 </div>
 <div id="theme_selector">
