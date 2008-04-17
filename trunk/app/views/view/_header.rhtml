@@ -6,9 +6,17 @@
 </div>
 <div id="order_selector">
 <label>Filter by author:</label>
+<%= link_to '(All authors)', :controller => 'view', :action => 'index' %>
 <% @users.each do |user| %>
-<%= link_to "#{user.username} <span class=\"highlight\">(#{user.post_count})</span>", :controller => 'view', :action => 'byauthor', :id => user.id %>
+<%= link_to "#{user.username} <span class=\"highlight\">(#{user.post_count})</span>", :controller => 'view', :action => 'byauthor', :id => user.username %>
 <% end %>
+</div>
+<div id="date_selector">
+	<label>Filter by date:</label>
+	<%= link_to '(Any date)', :controller => 'view', :action => 'index' %>
+	<a href="/today">Today's Poems</a>
+	<a href="/week">This Week's Poems</a>
+	<a href="/month">This Month's Poems</a>
 </div>
 <div id="theme_selector">
 <label>Theme:</label>

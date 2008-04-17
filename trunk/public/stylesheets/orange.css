@@ -57,6 +57,12 @@ a:hover, a:active
 
 .highlight { color: #aaa; }
 
+#workingheader #date_selector
+{
+    padding: 0.4em 1em;
+    background: #677eff;
+}
+
 #workingheader #theme_selector
 {
     padding: 0.4em 1em;

@@ -31,6 +31,11 @@ class ViewController < ApplicationController
   def index
     @poems = Poem.paginate(:all, :order => 'created_at DESC', :page => params[:page])
   end
+  
+  def bydate
+    @poems = Poem.paginate(:all, :conditions => params[:condition], :order => 'created_at DESC', :page => params[:page])
+    render :action => 'index'
+  end
 
   def bytag
     @show_pagination = false
@@ -41,7 +46,8 @@ class ViewController < ApplicationController
   end
 
   def byauthor
-    @poems = User.find(params[:id]).poems.paginate(:all, :order => 'created_at DESC', :page => params[:page])
+    user = User.find(:first, :conditions => "username = '#{params[:id]}'")
+    @poems = User.find(user.id).poems.paginate(:all, :order => 'created_at DESC', :page => params[:page])
     render :action => 'index'
   end
 

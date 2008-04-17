@@ -2,21 +2,23 @@
 <%= will_paginate(@poems) if @show_pagination %>
 <% @poems.each do |poem| %>
 <div class="poem">
-  <h3><%=poem.title%> (Rating: <%=poem.score%>)</h3>
+  <h3><%=poem.title%></h3>
   <hr />
   <div class="meta">
-    <% if poem.user %>By <%=poem.user.username%><br /><% end %>
-    on <%=poem.created_at.strftime("%Y.%m.%d %H:%M")%><br />
+		<div class="rating">Rating: <%=poem.score%></div>
+    <% if poem.user %><div class="author">By <%= link_to poem.user.username, :controller => 'view', :action => 'byauthor', :id => poem.user.username %></div><% end %>
+    <div clas="date">on <%=poem.created_at.strftime("%Y.%m.%d %H:%M")%></div>
+		<div clas="tags">
     <% poem.tags.each do |tag| %>
       <%= link_to tag.name, :controller => 'view', :action => 'bytag', :tag => tag.name %>
-    <% end %><br />
-    <%= link_to '(permalink)', :controller => 'view', :action => 'poem', :id => poem %>
+    <% end %>
+		</div>
+    <div class="permalink"><%= link_to '(permalink)', :controller => 'view', :action => 'poem', :id => poem %></div>
     <% if poem.user && (poem.user == session[:user]) %>
-        <br />
-        <%= link_to 'edit', :controller => 'view', :action => 'edit', :id => poem %>
+        <div class="edit"><%= link_to 'edit', :controller => 'view', :action => 'edit', :id => poem %></div>
       <% else %>
         <% if session[:user] && !session[:user].voted_on?(poem.id) %>
-        <br /><strong>Vote:
+        <strong>Vote:
         <%= link_to ' + ', :controller => 'view', :action => 'modup', :id => poem %> /
         <%= link_to ' - ', :controller => 'view', :action => 'moddown', :id => poem %></strong>
         <% else %>

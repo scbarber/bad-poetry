@@ -57,10 +57,16 @@ a:hover, a:active
 
 .highlight { color: #aaa; }
 
-#workingheader #theme_selector
+#workingheader #date_selector
 {
     padding: 0.4em 1em;
     background: #bbb;
+}
+
+#workingheader #theme_selector
+{
+    padding: 0.4em 1em;
+    background: #aaa;
 }
 
 .poem
@@ -137,35 +143,31 @@ a:hover, a:active
     color: #ddd;
   }
 
-
-        body { background-color: #fafafa; }
-        #workingheader #tag_selector { background-color: #ffffe9; }
-        #workingheader #order_selector { background-color: #ffffd9; }
-        HR { display: none; }
-        .poem {
-                background:#F5F5F5 none repeat scroll 0%;
-        }
-        .poem .content { padding-left: 275px; }
-        .poem h3 {
-                color:#0078D3;
-                font-size:1.5em;
-                margin-top: 0;
-                margin-bottom: 5px;
-        }
-        .meta {
-                background-color:#FAFAFA;
-                border-bottom:1px solid #EAEAEA;
-                border-top:1px solid #EAEAEA;
-                font-size:0.8em;
-                font-style:oblique;
-                padding:10px;
-                width:230px;
-                margin-top: -30px;
-        }
-        .meta A { text-decoration: underline; }
-        .pagination a {
-                border:1px solid #0078D3;
-        }
-        .pagination span.current {
-                border:1px solid #0078D3;
-        }
+body { background-color: #fafafa; }
+#workingheader #tag_selector { background-color: #ffffe9; }
+#workingheader #order_selector { background-color: #ffffd9; }
+#workingheader #date_selector { background-color: #ffffc9; }
+#workingheader #theme_selector { background-color: #ffffb9; }
+HR { display: none; }
+.poem { background:#F5F5F5 none repeat scroll 0%; }
+.poem .content { padding-left: 275px; }
+.poem h3 {
+	color:#0078D3;
+	font-size:1.5em;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.meta .rating { float: right; }
+.meta {
+	background-color:#FAFAFA;
+	border-bottom:1px solid #EAEAEA;
+	border-top:1px solid #EAEAEA;
+	font-size:0.8em;
+	font-style:oblique;
+	padding:10px;
+	width:230px;
+	margin-top: -30px;
+}
+.meta A { text-decoration: underline; }
+.pagination a {	border:1px solid #0078D3; }
+.pagination span.current { border:1px solid #0078D3; }

@@ -50,7 +50,7 @@ a:hover, a:active
     border-bottom: 1px solid #805F59;
 }
 
-#workingheader #tag_selector
+#workingheader #tag_selector, #workingheader #date_selector
 {
     padding: 0.4em 1em;
     background: #99BF60;

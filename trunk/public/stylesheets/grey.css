@@ -57,10 +57,16 @@ a:hover, a:active
 
 .highlight { color: #aaa; }
 
-#workingheader #theme_selector
+#workingheader #date_selector
 {
     padding: 0.4em 1em;
     background: #bbb;
+}
+
+#workingheader #theme_selector
+{
+    padding: 0.4em 1em;
+    background: #aaa;
 }
 
 .poem

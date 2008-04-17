@@ -16,6 +16,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '', :controller => 'view'
   map.connect 'tag/:tag', { :controller => 'view', :action => 'bytag' }
   map.connect 'author/:id', { :controller => 'view', :action => 'byauthor' }
+  map.connect 'today', { :controller => 'view', :action => 'bydate', :condition => 'date(created_at) = current_date()' }
+  map.connect 'week', { :controller => 'view', :action => 'bydate', :condition => "date_format(created_at, '%X-%V') = date_format(now(), '%X-%V')" }
+  map.connect 'month', { :controller => 'view', :action => 'bydate', :condition => "date_format(created_at, '%Y-%m') = date_format(now(), '%Y-%m')" }
 
 
   # Install the default route as the lowest priority.
